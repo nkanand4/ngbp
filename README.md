@@ -1,4 +1,5 @@
-# [ngBoilerplate](http://joshdmiller.github.com/ng-boilerplate) [![Build Status](https://api.travis-ci.org/ngbp/ngbp.png?branch=v0.3.2-release)](https://travis-ci.org/ngbp/ngbp)
+# [ngBoilerplate](https://github.com/nkanand4/ngbp.git)
+[![Build Status](https://travis-ci.org/nkanand4/ngbp.svg)](https://travis-ci.org/nkanand4/ngbp)
 
 An opinionated kickstarter for [AngularJS](http://angularjs.org) projects.
 
@@ -9,8 +10,8 @@ An opinionated kickstarter for [AngularJS](http://angularjs.org) projects.
 Install Node.js and then:
 
 ```sh
-$ git clone git://github.com/joshdmiller/ng-boilerplate
-$ cd ng-boilerplate
+$ git clone https://github.com/nkanand4/ngbp.git
+$ cd ngbp
 $ sudo npm -g install grunt-cli karma bower
 $ npm install
 $ bower install
@@ -72,7 +73,7 @@ that - and does it well.
 At a high level, the structure looks roughly like this:
 
 ```
-ng-boilerplate/
+ngbp/
   |- grunt-tasks/
   |- karma/
   |- src/
@@ -149,7 +150,7 @@ from GitHub, or merge the branch into your existing repository. Assuming you're
 starting from scratch, simply clone this repository using git:
 
 ```sh
-$ git clone git://github.com/joshdmiller/ng-boilerplate my-project-name
+$ git clone https://github.com/nkanand4/ngbp.git my-project-name
 $ cd my-project-name
 ```
 
