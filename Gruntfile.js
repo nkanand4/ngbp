@@ -483,6 +483,17 @@ module.exports = function ( grunt ) {
       },
 
       /**
+       * When our mock data source files change, we want to run lint them and
+       * run our unit tests.
+       */
+      mockjsSrc: {
+        files: [
+          '<%= dev_mock.js %>'
+        ],
+        tasks: [ 'jshint:src', 'karma:unit:run', 'copy:build_dev_mockjs' ]
+      },
+
+      /**
        * When our CoffeeScript source files change, we want to run lint them and
        * run our unit tests.
        */
