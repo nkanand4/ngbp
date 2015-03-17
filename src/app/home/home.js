@@ -12,9 +12,8 @@
  * The dependencies block here is also where component dependencies should be
  * specified, as shown below.
  */
-angular.module( 'ngBoilerplate.home', [
-  'ui.router',
-  'plusOne'
+angular.module( 'emsui.home', [
+  'ui.router'
 ])
 
 /**
@@ -29,6 +28,12 @@ angular.module( 'ngBoilerplate.home', [
       "main": {
         controller: 'HomeCtrl',
         templateUrl: 'home/home.tpl.html'
+      },
+      "header": {
+        templateUrl: 'html/header.tpl.html'
+      },
+      "footer": {
+        templateUrl: 'html/footer.tpl.html'
       }
     },
     data:{ pageTitle: 'Home' }
@@ -38,8 +43,31 @@ angular.module( 'ngBoilerplate.home', [
 /**
  * And of course we define a controller for our route.
  */
-.controller( 'HomeCtrl', function HomeController( $scope ) {
-})
+.controller( 'HomeCtrl', function HomeController( $scope, UserService ) {
+  $scope.info = {};
+  $scope.users = [];
 
-;
+  $scope.findUser = function() {
+    if(!$scope.info.id) {
+      return false;
+    }
+    UserService.get($scope.info).then(function(user) {
+      $scope.users = [user];
+    }, function() {
+      $scope.users = ["Can i throw index out of bound exception?"];
+    });
+  };
+
+  $scope.findUserByFirstName = function() {
+    if(!$scope.info.firstname) {
+      return false;
+    }
+    UserService.findByFirstName($scope.info).then(function(users) {
+      $scope.users = users;
+    }, function() {
+      $scope.users = ["Can i throw a 404?"];
+    });
+  };
+
+});
 

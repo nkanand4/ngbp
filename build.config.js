@@ -43,6 +43,14 @@ module.exports = {
   },
 
   /**
+   * Mocked data
+   */
+  dev_mock: {
+    js: [
+      'mock-data/**/*.js'
+    ]
+  },
+  /**
    * This is the same as `app_files`, except it contains patterns that
    * reference vendor code (`vendor/`) that we need to place into the build
    * process somewhere. While the `app_files` property ensures all
@@ -63,14 +71,16 @@ module.exports = {
   vendor_files: {
     js: [
       'vendor/angular/angular.js',
+      'vendor/angular-mocks/angular-mocks.js',
       'vendor/angular-bootstrap/ui-bootstrap-tpls.min.js',
       'vendor/placeholders/angular-placeholders-0.0.1-SNAPSHOT.min.js',
       'vendor/angular-ui-router/release/angular-ui-router.js',
-      'vendor/angular-ui-utils/modules/route/route.js'
+      'vendor/angular-ui-utils/modules/route/route.js',
+      'vendor/lodash/lodash.js'
     ],
     css: [
     ],
     assets: [
     ]
-  },
+  }
 };

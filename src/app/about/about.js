@@ -1,4 +1,4 @@
-angular.module( 'ngBoilerplate.about', [
+angular.module( 'emsui.about', [
   'ui.router',
   'placeholders',
   'ui.bootstrap'
@@ -11,6 +11,12 @@ angular.module( 'ngBoilerplate.about', [
       "main": {
         controller: 'AboutCtrl',
         templateUrl: 'about/about.tpl.html'
+      },
+      "header": {
+        templateUrl: 'html/header.tpl.html'
+      },
+      "footer": {
+        templateUrl: 'html/footer.tpl.html'
       }
     },
     data:{ pageTitle: 'What is It?' }
@@ -24,6 +30,4 @@ angular.module( 'ngBoilerplate.about', [
     "And another choice for you.",
     "but wait! A third!"
   ];
-})
-
-;
+});
