@@ -142,7 +142,10 @@ module.exports = function ( grunt ) {
       build_dev_mockjs: {
         files: [
           {
-            src: [ '<%= dev_mock.js %>' ],
+            src: [
+              '<%= test_files.js %>',
+              '<%= dev_mock.js %>'
+            ],
             dest: '<%= build_dir %>/',
             cwd: '.',
             expand: true
@@ -395,10 +398,11 @@ module.exports = function ( grunt ) {
         dir: '<%= build_dir %>',
         src: [
           '<%= vendor_files.js %>',
+          '<%= test_files.js %>',
           '<%= build_dir %>/src/**/*.js',
-          '<%= build_dir %>/mock-data/**/*.js',
           '<%= html2js.common.dest %>',
           '<%= html2js.app.dest %>',
+          '<%= build_dir %>/mock-data/**/*.js',
           '<%= vendor_files.css %>',
           '<%= build_dir %>/assets/<%= pkg.name %>-<%= pkg.version %>.css'
         ]
@@ -428,12 +432,12 @@ module.exports = function ( grunt ) {
         dir: '<%= build_dir %>',
         src: [ 
           '<%= vendor_files.js %>',
+          '<%= test_files.js %>',
           '<%= html2js.app.dest %>',
           '<%= html2js.common.dest %>',
           '<%= app_files.js %>',
           '<%= app_files.jsunit %>',
-          '<%= dev_mock.js %>',
-          '<%= test_files.js %>'
+          '<%= dev_mock.js %>'
         ]
       }
     },
