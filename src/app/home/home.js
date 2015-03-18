@@ -51,7 +51,7 @@ angular.module( 'emsui.home', [
     if(!$scope.info.id) {
       return false;
     }
-    UserService.get($scope.info).then(function(user) {
+    return UserService.get($scope.info).then(function(user) {
       $scope.users = [user];
     }, function() {
       $scope.users = ["Can i throw index out of bound exception?"];
