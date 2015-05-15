@@ -1,8 +1,20 @@
-<div class="list-cities">
-    <div data-ng-repeat="city in cities">
-        {{city.name}}
-    </div>
-    Use the url with the longitude and latitude to find out the weather from following webservice
-    <br>
-    <strong>http://api.openweathermap.org/data/2.5/find?lat=55.5&lon=37.5&cnt=10</strong>
+<!-- Section begins -->
+<div class="container">
+	<section>
+		<div class="row">
+			<div class="col-xs-12 col-sm-4 col-md-4" data-ng-repeat="city in cities">
+				<div class="section-boxes">
+					<h3>{{city.name}}</h3>
+					<div>
+						<span class="pull-left weather-image" id="{{city.weather[0].main | lowercase}}"></span>
+						<span>{{city.main.temp}}<span class="degree"><span>o</span> F</span></span>
+						<div class="clearfix"></div>
+					</div>
+					<h4>{{city.weather[0].main}}</h4>
+					<h4>Friday 4:00PM</h4>
+				</div>
+			</div>			
+		</div>	
+	</section>
 </div>
+<!-- Section ends -->
